@@ -2,7 +2,7 @@
 * @Author: kasperjensen
 * @Date:   2014-02-13 22:10:36
 * @Last Modified by:   kasperjensen
-* @Last Modified time: 2014-02-13 22:31:24
+* @Last Modified time: 2014-02-14 13:28:33
 */
 
 /**
@@ -40,6 +40,27 @@ requirejs.config({
  * Action!
  * this is where the application logic starts
  */
-requirejs([], function() {
-	
+requirejs(['map/Tilemap', 'PIXI'], function(Tilemap, PIXI) {
+
+	// create an new instance of a pixi stage
+	var stage = new PIXI.Stage(0x66FF99);
+
+	// create a renderer instance
+	var renderer = PIXI.autoDetectRenderer(400, 300);
+
+	// add the renderer view element to the DOM
+	document.body.appendChild(renderer.view);
+
+	var map = new Tilemap('maps/demo_level/simple.json');
+	map.loadLevelData();
+	stage.addChild(map);
+
+	function animate() {
+		requestAnimFrame( animate );
+
+		// render the stage
+		renderer.render(stage);
+	}
+
+	animate();
 });

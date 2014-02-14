@@ -4,9 +4,6 @@
 	"dependencies": {
 		"pixi":null,
 		"jquery":null,
-		"requirejs":null,
-		
-		"backbone":null,
-		"underscore":null
+		"requirejs":null
 	}
 }
