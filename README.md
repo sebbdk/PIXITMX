@@ -1,7 +1,4 @@
 jstrap
 ======
 
-JStrap, a javascript application bootstrap
-
-I found my self doing the same project setup on a lot of js applications. 
-So i made this repo to mitigate that work
+A simple library to parse maps from tiled(http://www.mapeditor.org/) onto a PIXI project.
